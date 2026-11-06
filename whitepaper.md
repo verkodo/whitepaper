@@ -1,7 +1,7 @@
 ---
 title: verkodo
 subtitle: Truth code – mathematics and law written formally, checked by machine
-version: 0.3
+version: 0.4
 status: Draft
 ---
 
@@ -125,6 +125,12 @@ filters and in metric spaces, paths through the same material, a French translat
 income tax scale of § 32a EStG with its roundings. On 2026-11-06 they held 61 declarations; Lean checked 62 parts,
 2 are open (marked as such), none was rejected.
 
+Law needs more than numbers and truth values: verkodo has enumerations, units, records and lists with sums over
+them, tables by ranges or by cases, functions on dates for deadlines, and norms that use other norms – all exported
+to Lean. The knowledge itself, written to be right rather than to show the language, grows in its own repository,
+*sciaro* (Esperanto for a body of knowledge): first § 19 UStG in its current version, paragraphs 1 to 6 with the
+deadlines of paragraphs 3 and 5, every rule tied to its sentence of the official text; Lean checked all 68 parts.
+
 ## 7. Licences and governance
 
 verkodo is free software under AGPL-3.0-or-later, published by falkOSS – everything included, no telemetry. Texts such as this whitepaper are under CC BY 4.0; the artwork of the brand under CC BY-ND 4.0. Contributions are signed off under the Developer Certificate of Origin.
@@ -143,9 +149,10 @@ kodo   code
 
 ## 9. Roadmap
 
-1. **Libraries of knowledge** – `.vk` files outside the tool, checked by CI like Mathlib: first a core of German tax
-   law; projects that depend on such libraries.
-2. **Law in Lean** – norms that use other norms, cases that span a change of the law, who bears an obligation.
+1. **Libraries of knowledge** – `.vk` files outside the tool, checked by CI like Mathlib: begun with *sciaro*, first a
+   core of German tax law; projects that depend on such libraries.
+2. **Law in Lean** – cases that span a change of the law, who bears an obligation, public holidays and working days
+   as modules of their own.
 3. **Editors and output** – an extension for VS Code over the language server, LaTeX next to HTML, Typst and
    Markdown.
 4. **First content** – a lecture and a guide to a statute written in verkodo from start to end, with people who
