@@ -1,7 +1,7 @@
 ---
 title: verkodo
 subtitle: Truth code – mathematics and law written formally, checked by machine
-version: 0.4
+version: 0.5
 status: Draft
 ---
 
@@ -109,15 +109,16 @@ verkodo takes ideas from several projects and differs from each in one point.
 
 ## 6. Where it stands
 
-verkodo is at its beginning. Version 0.2.0 is on crates.io (`cargo install verkodo`, Rust 1.99 or later; Lean and
+verkodo is at its beginning. Version 0.3.0 is on crates.io (`cargo install verkodo`, Rust 1.99 or later; Lean and
 Typst are installed separately), in Rust, as nine crates – from the syntax to an SDK for editors and IDEs:
 
 - `verkodo check` parses and resolves `.vk` files, checks types, paths, versions and translations;
 - `verkodo prove` exports to Lean 4 (Mathlib), carries theorems over chains of bridges and maps Lean's verdicts,
   names and goals back onto the source;
+- `verkodo eval` computes a norm for given inputs, also for a file of cases, to compare with official tables;
 - `verkodo render` and `verkodo pdf` write HTML with hover cards and PDF through Typst; `verkodo fmt` formats;
-- `verkodo lsp` is the language server for editors; `verkodo serve` the web editor, with Lean on the server when
-  switched on.
+- `verkodo lsp` is the language server for editors, with an extension for VS Code; `verkodo serve` the web editor,
+  with Lean on the server when switched on – the same editor runs without a server, and without Lean, in the browser.
 
 Three examples serve as proof of concept: the beginning of an analysis course (sequences, convergence with ε-N, with
 filters and in metric spaces, paths through the same material, a French translation), § 19 UStG in its versions of
@@ -128,8 +129,14 @@ income tax scale of § 32a EStG with its roundings. On 2026-11-06 they held 61 d
 Law needs more than numbers and truth values: verkodo has enumerations, units, records and lists with sums over
 them, tables by ranges or by cases, functions on dates for deadlines, and norms that use other norms – all exported
 to Lean. The knowledge itself, written to be right rather than to show the language, grows in its own repository,
-*sciaro* (Esperanto for a body of knowledge): first § 19 UStG in its current version, paragraphs 1 to 6 with the
-deadlines of paragraphs 3 and 5, every rule tied to its sentence of the official text; Lean checked all 68 parts.
+*sciaro* (Esperanto for a body of knowledge). On 2026-11-07 it held § 19 UStG in its current version, paragraphs 1
+to 6 with the deadlines of paragraphs 3 and 5; deadlines that end on a weekend or public holiday (§ 193 BGB, § 108
+AO) with the public holidays of Brandenburg computed from its own act, Easter included; the wage tax of 2026 after the
+programme flow chart of the Federal Ministry of Finance (annual computation on current wages, all six tax classes;
+other pay periods, pensions, the solidarity surcharge and church tax are OPEN), which gives all 516 values of the
+official test tables; and the first lecture of an analysis course, sequences and limits, every theorem proved with
+Mathlib. Every rule is tied to its sentence of the official text or to its routine of the flow chart; Lean checked all
+195 parts.
 
 ## 7. Licences and governance
 
